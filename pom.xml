@@ -32,7 +32,7 @@
         <kotlin.version>1.4.0</kotlin.version>
         <kotlin.jvm-target.version>1.8</kotlin.jvm-target.version>
         <kotlin.api.version>1.4</kotlin.api.version>
-        <kotlinx.html.version>0.6.12</kotlinx.html.version>
+        <kotlinx.html.version>0.7.3</kotlinx.html.version>
 
         <junit.jupiter.version>5.5.1</junit.jupiter.version>
         <junit.vintage.version>4.12.3</junit.vintage.version>
@@ -73,7 +73,13 @@
             <version>${junit.jupiter.version}</version>
             <scope>test</scope>
         </dependency>
-    </dependencies>
+       <dependency>
+           <groupId>junit</groupId>
+           <artifactId>junit</artifactId>
+           <version>4.12</version>
+           <scope>compile</scope>
+       </dependency>
+   </dependencies>
 
     <build>
         <sourceDirectory>src</sourceDirectory>
