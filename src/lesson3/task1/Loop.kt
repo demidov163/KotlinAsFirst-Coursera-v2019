@@ -2,6 +2,8 @@
 
 package lesson3.task1
 
+import kotlin.math.max
+import kotlin.math.min
 import kotlin.math.sqrt
 
 /**
@@ -67,7 +69,11 @@ fun digitCountInNumber(n: Int, m: Int): Int =
  *
  * Использовать операции со строками в этой задаче запрещается.
  */
-fun digitNumber(n: Int): Int = TODO()
+fun digitNumber(n: Int): Int =
+    when {
+        n / 10 == 0 -> 1
+        else -> digitNumber(n / 10) + 1
+    }
 
 /**
  * Простая
@@ -83,7 +89,14 @@ fun fib(n: Int): Int = TODO()
  * Для заданных чисел m и n найти наименьшее общее кратное, то есть,
  * минимальное число k, которое делится и на m и на n без остатка
  */
-fun lcm(m: Int, n: Int): Int = TODO()
+fun lcm(m: Int, n: Int): Int {
+    for (i in 1..min(m, n)) {
+        val j = max(m, n) * i
+        if (j % min(m, n) == 0) return j
+    }
+    return m * n
+}
+
 
 /**
  * Простая
